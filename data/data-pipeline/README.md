@@ -314,7 +314,7 @@ data_path = Path.cwd()
 
 # score data expected
 score_csv_path = data_path / "data_pipeline" / "data" / "score" / "csv" / "full" / "usa.csv"
-score_initial_df = pd.read_csv(score_csv_path, dtype={"GEOID10_TRACT": "string"}, low_memory=False)[:2]
+score_initial_df = pd.read_csv(score_csv_path, dtype={"GEOID10_TRACT": "string"}, low_memory=False, nrows=2)
 score_initial_df.to_csv(data_path / "data_pipeline" / "etl" / "score" / "tests" / "sample_data" /"score_data_initial.csv", index=False)
 ```
 
@@ -328,7 +328,7 @@ We have four pickle files that correspond to expected files:
 
 To update the pickles, let's go one by one:
 
-For the `score_transformed_expected.pkl`, but a breakpoint on [this line](https://github.com/usds/justice40-tool/blob/main/data/data-pipeline/data_pipeline/etl/score/tests/test_score_post.py#L58), before the `pdt.assert_frame_equal` and run:
+For the `score_transformed_expected.pkl`, put a breakpoint on [this line](https://github.com/usds/justice40-tool/blob/main/data/data-pipeline/data_pipeline/etl/score/tests/test_score_post.py#L58), before the `pdt.assert_frame_equal` and run:
 `pytest data_pipeline/etl/score/tests/test_score_post.py::test_transform_score`
 
 Once on the breakpoint, capture the df to a pickle as follows:
