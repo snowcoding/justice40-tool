@@ -18,7 +18,7 @@ exports[`rendering of the MethodologyFormula checks if component renders 1`] = `
       <span>
         IF
       </span>
-       the tract is above the thresholds for one or more environmental, climate, health or 
+       the tract exceeds the thresholds for one or more environmental, climate, health or 
       socioeconomic burden indicators
       
     </p>
@@ -28,7 +28,7 @@ exports[`rendering of the MethodologyFormula checks if component renders 1`] = `
       <span>
         AND
       </span>
-       the tract is above the thresholds for both socioeconomic indicators
+       the tract exceeds the thresholds for both socioeconomic indicators
     
     </p>
   </section>
